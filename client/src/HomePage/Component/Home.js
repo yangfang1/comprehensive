@@ -5,6 +5,7 @@ class App extends Component {
     return (
       <div className='root'>
         hello,高校综合素质分析系统
+        <span className='iconfont iconyajun'></span>
       </div>
     );
   }

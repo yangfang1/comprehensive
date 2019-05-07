@@ -1,4 +1,4 @@
-'use strict';
+
 
 const fs = require('fs');
 const path = require('path');
@@ -307,6 +307,22 @@ module.exports = function(webpackEnv) {
             },
           ],
           include: paths.appSrc,
+        },
+        {
+          test: /\.scss|\.css$/,
+          // include: /node_modules/,
+          include: [/iconfonts/, /global/], // 对于字体库和特殊样式，略过css-modules(规避bug)
+          // use: [
+          //   {
+          //     loader: 'style-loader', // creates style nodes from JS strings
+          //   },
+          //   {
+          //     loader: 'css-loader', // translates CSS into CommonJS
+          //   },
+          //   {
+          //     loader: 'sass-loader', // compiles Sass to css
+          //   },
+          // ],
         },
         {
           // "oneOf" will traverse all following loaders until one will

@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import '../lib/iconfonts/iconfont.scss';
 import Home from '../HomePage/Component/Home'
 function BasicExample() {
   return (
