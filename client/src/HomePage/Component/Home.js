@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../Home.scss';
-import {FUNCTION_lIST,LOGIN_LIST} from '../../common/const';
-
+import {STUDENT_FUNCTION_lIST,LOGIN_LIST} from '../../common/const';
+import Footer from '../../lib/Components/Footer/Footer'
 class App extends Component {
   constructor(props){
     super();
@@ -10,7 +10,7 @@ class App extends Component {
     }
   }
   generateFunction=()=>{
-    return FUNCTION_lIST.map((item,index)=>{
+    return STUDENT_FUNCTION_lIST.map((item,index)=>{
       const {isFunction}=this.state;
       if(isFunction===index){
         return(
@@ -85,6 +85,7 @@ class App extends Component {
            {this.generateLogin()}
           </div>
         </div>
+        <Footer/>
       </div>
     );
   }

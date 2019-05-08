@@ -1,7 +1,7 @@
 import STUDENT from '../lib/img/student.jpg';
 import TEACHER from '../lib/img/teacher.jpg';
 import ADMIN from '../lib/img/admin.jpg';
-export const FUNCTION_lIST=[
+export const STUDENT_FUNCTION_lIST=[
     {
         title:"信息设置",
         description:"根据自身情况修改信息",
@@ -21,12 +21,6 @@ export const FUNCTION_lIST=[
         ulr:''
     },
     {
-        title:"个人分析结果",
-        description:"针对学生的每项数据，做出综合性分析",
-        icon:'iconhuaxiangduibifenxi',
-        ulr:''
-    },
-    {
         title:"综合对比",
         description:"学生之间的综合比对，显示出对比分析结果",
         icon:'iconduibivs',
@@ -37,7 +31,82 @@ export const FUNCTION_lIST=[
         description:"系统数据库中所有学生综合排名，并通过各种条件进行筛选",
         icon:'iconpaiming',
         ulr:''
-    }
+    },
+    {
+        title:"个人分析结果",
+        description:"针对学生的每项数据，做出综合性分析",
+        icon:'iconhuaxiangduibifenxi',
+        ulr:''
+    },
+]
+export const TEACHER_FUNCTION_lIST=[
+    {
+        title:"数据录入",
+        description:"老师根据自己学生情况录入学生综合素质的各个方面的数据",
+        icon:'iconshujuluru',
+        ulr:''
+    },
+    {
+        title:"学生个人详情页",
+        description:"针对每个学生的数据，详细展示学生各项数据的占比",
+        icon:'icongerenxinxi',
+        ulr:''
+    },
+    {
+        title:"学生综合对比",
+        description:"学生之间的综合比对，显示出对比分析结果",
+        icon:'iconduibivs',
+        ulr:''
+    },
+    {
+        title:"学生综合排名",
+        description:"系统数据库中所有学生综合排名，并通过各种条件进行筛选",
+        icon:'iconpaiming',
+        ulr:''
+    },
+    {
+        title:"审核学生综合成绩",
+        description:"针对学生的每项数据，做出综合性分析",
+        icon:'iconshenhe',
+        ulr:''
+    },
+]
+export const ADMIN_FUNCTION_lIST=[
+    {
+        title:"学生个人详情页",
+        description:"针对每个学生的数据，详细展示学生各项数据的占比",
+        icon:'icongerenxinxi',
+        ulr:''
+    },
+    {
+        title:"学生综合排名",
+        description:"系统数据库中所有学生综合排名，并通过各种条件进行筛选",
+        icon:'iconpaiming',
+        ulr:''
+    },
+    {
+        title:"综合素质评定元素修改",
+        description:"教务管理员对综合评定元素及分数进行修改",
+        icon:'iconshenhe',
+        ulr:''
+    },
+]
+export const CONTACT_LIST=[
+    {
+        title:"QQ:1223010592",
+        icon:'iconqq',
+        ulr:''
+    },
+    {
+        title:"邮箱:1223010592@qq.com",
+        icon:'iconyouxiang',
+        ulr:''
+    },
+    {
+        title:"电话:18827552328",
+        icon:'icondianhua3',
+        ulr:''
+    },
 ]
 export const LOGIN_LIST=[
     {

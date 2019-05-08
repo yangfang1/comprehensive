@@ -1,13 +1,12 @@
 *{
     margin: 0px;
 }
+body{
+    min-width: 1200px;
+}
 .root{
     width: 100%;
     height: 100vh;
-}
-.section-container{
-    width: 1200px;
-    margin: 0 auto;
 }
 .first-section{
     width:100%;
@@ -19,6 +18,8 @@
         background:rgba(0,0,0,0.6);
     }
     .section-container{
+        max-width: 1200px;
+        margin: 0 auto;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -39,7 +40,8 @@
     height: 554px;
     border-bottom: 1px solid gainsboro;
     .section-container{
-        width: 1200px;
+        max-width: 1200px;
+        margin: 0 auto;
         height: 100%;
         padding-top: 64px;
         text-align: center;
@@ -104,6 +106,7 @@
 .login{
     width: 100%;
     text-align: center;
+    margin-bottom: 20px;
     .section-title{
         margin-top:48px;
         font-size: 32px;
@@ -117,8 +120,8 @@
         font-weight: 50;
     }
     .section-container{
-        width:1200px;
-        margin:0 auto;
+        max-width: 1200px;
+        margin: 0 auto;
         display:flex;
         .login-item{
             width:400px;

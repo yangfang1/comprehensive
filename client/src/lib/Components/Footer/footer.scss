@@ -1,0 +1,66 @@
+.footer{
+    min-width: 100%;
+    background: #1c1b20;
+    color: white;
+    .section-container{
+        width: 1200px;
+        display: flex;
+        justify-content: center;
+        margin: 0px auto;
+        .function,.contact{
+            .title{
+                margin-top: 20px;
+                font-size: 16px;
+            }
+            .tab{
+                display: flex;
+            }
+            .student,.teacher,.admin,.content{
+                width: 250px;
+                margin:10px 0;
+                display: flex;
+                flex-direction: column;
+                .blog{
+                   font-size: 18px;
+                }
+                .list{
+                    padding: 0px;
+                    margin-top:10px;
+                    height:90px;
+                    display: flex;
+                    flex-wrap:wrap;
+                    flex-direction: column;
+                    li{
+                        display: inline;
+                        font-size: 16px;
+                        line-height: 30px;
+                        opacity: 0.5;
+                        &:hover{
+                            opacity: 1;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            .teacher{
+                width: 310px;
+            }
+            .content{
+                width:280px;
+            }
+            .admin{
+                width: 210px;
+            }
+        }
+    }
+    .footer-text{
+        display: block;
+        width: 100%;
+        text-align: center;
+        height: 40px;
+        font-size: 14px;
+        line-height: 35px;
+        border-top: 1px solid gray;
+        opacity: 0.5;
+    }
+}
