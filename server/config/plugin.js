@@ -1,9 +1,14 @@
 'use strict';
 
 /** @type Egg.EggPlugin */
+// 也可以写成
+// exports.mongoose = {
+//   enable: true,
+//   package: 'egg-mongoose',
+// };
 module.exports = {
-  // had enabled by egg
-  // static: {
-  //   enable: true,
-  // }
+  mongoose: {
+    enable: true,
+    package: 'egg-mongoose',
+  },
 };
