@@ -1,0 +1,61 @@
+import STUDENT from '../lib/img/student.jpg';
+import TEACHER from '../lib/img/teacher.jpg';
+import ADMIN from '../lib/img/admin.jpg';
+export const FUNCTION_lIST=[
+    {
+        title:"信息设置",
+        description:"根据自身情况修改信息",
+        icon:'iconset-s',
+        ulr:''
+    },
+    {
+        title:"数据录入",
+        description:"学生根据自己获奖情况录入自己综合素质的各个方面的数据",
+        icon:'iconshujuluru',
+        ulr:''
+    },
+    {
+        title:"个人详情页",
+        description:"针对每个学生的数据，详细展示学生各项数据的占比",
+        icon:'icongerenxinxi',
+        ulr:''
+    },
+    {
+        title:"个人分析结果",
+        description:"针对学生的每项数据，做出综合性分析",
+        icon:'iconhuaxiangduibifenxi',
+        ulr:''
+    },
+    {
+        title:"综合对比",
+        description:"学生之间的综合比对，显示出对比分析结果",
+        icon:'iconduibivs',
+        ulr:''
+    },
+    {
+        title:"综合排名",
+        description:"系统数据库中所有学生综合排名，并通过各种条件进行筛选",
+        icon:'iconpaiming',
+        ulr:''
+    }
+]
+export const LOGIN_LIST=[
+    {
+        title:"student",
+        description:"学生登录，修改设置，录入数据，查看综合素质排名，个人详情，分析结果，学生对比分析详情",
+        img:STUDENT,
+        url:''
+    },
+    {
+        title:"teacher",
+        description:"老师登录，录入学生数据，查看综合排名，审核学生自主录入数据，学生详情，学生对比分析详情",
+        img:TEACHER,
+        url:''
+    },
+    {
+        title:"administrator",
+        description:"管理员登录，查看学生综合排名，修改综合素质评定元素及成绩",
+        img:ADMIN,
+        url:''
+    }
+]
