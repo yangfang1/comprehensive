@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import '../Home.scss';
 import {STUDENT_FUNCTION_lIST,LOGIN_LIST} from '../../common/const';
 import Footer from '../../lib/Components/Footer/Footer'
 class App extends Component {
   constructor(props){
-    super();
+    super(props);
     this.state={
       isFunction:""
     }
@@ -36,13 +37,13 @@ class App extends Component {
   }
   generateLogin=()=>{
     return LOGIN_LIST.map((item,index)=>(
-      <div class='login-item' key={index}>
+      <div className='login-item' key={index}>
         <div className='mongolia'>
           <p>{item.title}</p>
           <p className='description'>
             {item.description}
           </p>
-          <div className='btn'>
+          <div className='btn' onClick={()=>this.handleLogin(item.title)}>
             登录
           </div>
         </div>
@@ -59,6 +60,9 @@ class App extends Component {
     this.setState({
       isFunction:""
     })
+  }
+  handleLogin=role=>{
+    this.props.history.push(`/login/${role}`)
   }
   render() {
     return (
@@ -91,4 +95,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

@@ -128,3 +128,26 @@ export const LOGIN_LIST=[
         url:''
     }
 ]
+export const LOGIN_ROLE={
+    student:{
+        name:'学生登录',
+        placeholder:{
+            name:'请输入学生学号',
+            password:'请输入密码'
+        }
+        },
+    teacher:{
+        name:'老师登录',
+        placeholder:{
+            name:'请输入教师工号',
+            password:'请输入密码'
+        }
+      },
+    administrator:{
+        name:'管理员登录',
+        placeholder:{
+            name:'请输入管理员工号',
+            password:'请输入密码'
+        }
+    }
+}

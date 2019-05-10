@@ -5,18 +5,18 @@ import './footer.scss';
 class Footer extends Component {
     generateList=(list,sort)=>{
       return list.map((item,index)=>{
-          if(sort){
               return(
                   <li key={index}>
+                    {sort?(
+                      <div>
                   <span className={`iconfont ${item.icon}`}></span>&nbsp;
                   <span>{item.title}</span>
+                      </div>
+
+                    ):<span>{item.title}</span>}
+
                   </li>
               )
-          }else{
-              return(
-                 <li index={index}>{item.title}</li>
-              )
-          }
     })
     }
     render(){
