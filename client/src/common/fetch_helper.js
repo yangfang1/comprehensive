@@ -3,7 +3,6 @@
     require('isomorphic-fetch');
  
     export default function request(method, url, body) {
-        console.log('hello')
         method = method.toUpperCase();
         if (method === 'GET') {
             body = undefined;
@@ -13,17 +12,23 @@
  
         return fetch(url, {
             method,
+            cache:'no-cache',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
+            credentials: 'same-origin',
             body
         }).then((res) => {
             if (res.status >= 200 && res.status < 300) {
-                return res;
+                console.log(typeof res)
+                console.log('返回数据res',res)
+                return res.json();
             } else {
                 return Promise.reject('请求失败！');
             }
+        }).catch((err)=>{
+            console.log(err)
         })
     }
  

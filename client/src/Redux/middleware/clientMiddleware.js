@@ -40,6 +40,7 @@ export const errData = {
           resolve(json);
         })
         .catch(err => {
+          console.log('错误',err)
           next({ ...rest, error: errData, type: FAILURE });
           resolve();
         });

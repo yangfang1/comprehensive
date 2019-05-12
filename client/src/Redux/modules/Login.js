@@ -1,35 +1,35 @@
-import { post } from '../../common/fetch_helper';
+import { get } from '../../common/fetch_helper';
 // 为Home创建reducer
 const initialState={
     loading:false,
-    error:false,
+    FAIL:false,
     relData:{}
 }
 const LOGIN_LOAD='login/LOGIN_LOAD';
 const LOGIN_SUCCESS='login/LOGIN_SUCESS';
-const LOGIN_ERROR='login/LOGIN_ERROT';
+const LOGIN_FAIL='login/LOGIN_ERROT';
 export default function reducer(state=initialState,action){
     switch(action.type){
         case LOGIN_LOAD:{
             return{
                 ...state,
                 loading:true,
-                error:false
+                FAIL:false
             }
         }
         case LOGIN_SUCCESS:{
             return{
                 ...state,
                 loading:false,
-                error:false,
+                FAIL:false,
                 relData:action
             }
         }
-        case LOGIN_ERROR:{
+        case LOGIN_FAIL:{
             return{
                 ...state,
                 loading:true,
-                error:false
+                FAIL:false
             }
         }
         default:
@@ -37,14 +37,13 @@ export default function reducer(state=initialState,action){
     }
 }
 export function login(name,password){
-    const data={
-        name,
-        password
-    }
-    console.log(data)
+    // const data={
+    //     name,
+    //     password
+    // }
     return{
-        types:[LOGIN_LOAD,LOGIN_SUCCESS,LOGIN_ERROR],
+        types:[LOGIN_LOAD,LOGIN_SUCCESS,LOGIN_FAIL],
         // url:'hello'
-        promise:post('/login',data)
+        promise:get('/api/test')
     }
 }
