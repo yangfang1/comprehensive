@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import '../Home.scss';
 import {STUDENT_FUNCTION_lIST,LOGIN_LIST} from '../../common/const';
+import HeaderContainer from '../../lib/Components/Header/Container/HeaderContianer';
 import Footer from '../../lib/Components/Footer/Footer'
 class App extends Component {
   constructor(props){
     super(props);
     this.state={
       isFunction:"",
-      isLogin:sessionStorage.getItem("isLogin")
     }
   }
   generateFunction=()=>{
@@ -66,16 +66,37 @@ class App extends Component {
     this.props.history.push(`/login/${role}`)
   }
   render() {
-    const {isLogin}=this.state;
-    console.log(isLogin)
+    const isLogin=sessionStorage.getItem("isLogin");
+    let info=sessionStorage.getItem("info");
+    console.log(isLogin,info)
+    if(!(info==='null')){
+      console.log('改变')
+      info=JSON.parse(info);
+      console.log(info)
+    }else{
+      info={
+        userName:"",
+        avator:"",
+        role:""
+      }
+    }
     return (
       <div className='root'>
         <div className='first-section'>
          <div className='mongolia'>
-          <div className='section-container'>
-            <p className='title'>高校大学生综合素质分析系统</p>
-            <p className='subTitle'>Comprehensive Quality Analysis System for College Students</p>
-          </div>
+          {isLogin==='true'?(<HeaderContainer></HeaderContainer>):null}
+          {isLogin==='true'?(
+           <div className='section-container'>
+             <img src={info.avator} alt='头像'></img>
+             <p className='infoName'>{info.userName}</p>
+             <p className='infoName'>当前排名：1</p>
+           </div>
+          ):(
+            <div className='section-container'>
+              <p className='title'>高校大学生综合素质分析系统</p>
+              <p className='subTitle'>Comprehensive Quality Analysis System for College Students</p>
+            </div>
+          )}
          </div>
         </div>
         <div className='second-section'>

@@ -11,10 +11,8 @@ class BasicExample extends Component {
     this.props.getUserInfo().then(()=>{
       const {pathname}=window.location;
       const {isLogin}=this.props;
-      console.log(pathname==='/'&&!isLogin)
       if(pathname!=='/'&&!isLogin){
-        console.log('是')
-        this.props.history.push('/login/student')
+        this.props.history.push('/login/student');
       }
     })
   }

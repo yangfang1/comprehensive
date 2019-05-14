@@ -1,9 +1,10 @@
-import { post } from '../../common/fetch_helper';
+import { get,post } from '../../common/fetch_helper';
 // 为Home创建reducer
 const initialState={
     loading:false,
     loaded:false,
     isLogin:"",
+    info:{},
     msg:""
 }
 const LOGIN_LOAD='login/LOGIN_LOAD';
@@ -24,6 +25,7 @@ export default function reducer(state=initialState,action){
                 loading:false,
                 loaded:true,
                 isLogin:action.result.isLogin,
+                info:action.result.info,
                 msg:action.result.msg
             }
         }
@@ -47,5 +49,11 @@ export function login(name,password,role){
     return{
         types:[LOGIN_LOAD,LOGIN_SUCCESS,LOGIN_FAIL],
         promise:post('/api/login',data)
+    }
+}
+export function loginOut(){
+    return{
+        types:[LOGIN_LOAD,LOGIN_SUCCESS,LOGIN_FAIL],
+        promise:get('/api/loginout')
     }
 }

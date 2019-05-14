@@ -16,6 +16,7 @@ body{
     .mongolia{
         width: 100%;height: 100%;
         background:rgba(0,0,0,0.6);
+        position: relative;
     }
     .section-container{
         max-width: 1200px;
@@ -26,12 +27,20 @@ body{
         align-items: center;
         color: white;
         height:calc(100% - 64px);
-        padding-top: 64px;
         .title{
             font-size: 46px;
         }
         .subTitle{
             font-size: 18px;
+        }
+        img{
+            width: 120px;
+            height: 120px;
+            border-radius: 100%
+        }
+        .infoName{
+            font-size: 18px;
+            margin-top: 10px;
         }
     }
 }

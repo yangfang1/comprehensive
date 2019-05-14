@@ -8,11 +8,18 @@ class LoginController extends Controller {
     ctx.set('Content-Type', 'application/json');
     const data = await ctx.service.test.findList();
     const user = ctx.request.body;
+    const userId = ctx.session.userId;
     const databaseUser = data.filter(item => {
       return item.get('role') === user.role && item.get('id_number') === user.name;
     });
     console.log(databaseUser);
-    if (databaseUser.length === 0) {
+    if (userId) {
+      this.ctx.body = {
+        errorNum: 0,
+        isLogin: false,
+        msg: '已登录，请退出重新登录或者跳转主页',
+      };
+    } else if (databaseUser.length === 0) {
       this.ctx.body = {
         errorNum: 0,
         isLogin: false,
@@ -28,6 +35,7 @@ class LoginController extends Controller {
           errorNum: 0,
           isLogin: true,
           role: user.role,
+          info: databaseUser[0],
           msg: '登录成功',
         };
       } else {
@@ -38,6 +46,17 @@ class LoginController extends Controller {
         };
       }
     }
+  }
+  async loginout() {
+    const { ctx } = this;
+    ctx.set('Content-Type', 'application/json');
+    this.ctx.session.userId = null;
+    ctx.body = {
+      errorNum: 0,
+      isLogin: false,
+      info: {},
+      msg: '退出成功',
+    };
   }
 }
 
