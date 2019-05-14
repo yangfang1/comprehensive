@@ -7,7 +7,8 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state={
-      isFunction:""
+      isFunction:"",
+      isLogin:sessionStorage.getItem("isLogin")
     }
   }
   generateFunction=()=>{
@@ -65,6 +66,8 @@ class App extends Component {
     this.props.history.push(`/login/${role}`)
   }
   render() {
+    const {isLogin}=this.state;
+    console.log(isLogin)
     return (
       <div className='root'>
         <div className='first-section'>

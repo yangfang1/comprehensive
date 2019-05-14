@@ -1,33 +1,31 @@
-import { post } from '../../common/fetch_helper';
+import { get } from '../../common/fetch_helper';
 // 为Home创建reducer
 const initialState={
     loading:false,
     loaded:false,
-    isLogin:"",
-    msg:""
+    isLogin:""
 }
-const LOGIN_LOAD='login/LOGIN_LOAD';
-const LOGIN_SUCCESS='login/LOGIN_SUCESS';
-const LOGIN_FAIL='login/LOGIN_ERROT';
+const ROUTE_LOAD='ROUTE/ROUTE_LOAD';
+const ROUTE_SUCCESS='ROUTE/ROUTE_SUCESS';
+const ROUTE_FAIL='ROUTE/ROUTE_ERROT';
 export default function reducer(state=initialState,action){
     switch(action.type){
-        case LOGIN_LOAD:{
+        case ROUTE_LOAD:{
             return{
                 ...state,
                 loading:true,
                 loaded:false
             }
         }
-        case LOGIN_SUCCESS:{
+        case ROUTE_SUCCESS:{
             return{
                 ...state,
                 loading:false,
-                loaded:true,
-                isLogin:action.result.isLogin,
-                msg:action.result.msg
+                loaded:false,
+                isLogin:action.result.data.isLogin
             }
         }
-        case LOGIN_FAIL:{
+        case ROUTE_FAIL:{
             return{
                 ...state,
                 loading:true,
@@ -38,14 +36,9 @@ export default function reducer(state=initialState,action){
         return state
     }
 }
-export function login(name,password,role){
-    const data={
-        name,
-        password,
-        role
-    }
+export function getUserInfo(){
     return{
-        types:[LOGIN_LOAD,LOGIN_SUCCESS,LOGIN_FAIL],
-        promise:post('/api/login',data)
+        types:[ROUTE_LOAD,ROUTE_SUCCESS,ROUTE_FAIL],
+        promise:get('/api/user/info')
     }
 }

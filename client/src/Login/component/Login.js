@@ -28,7 +28,7 @@ class Login extends Component{
     this.props.onLogin(name,password)
   }
     render(){
-      const {role}=this.props;
+      const {role,isLogin,msg}=this.props;
         return(
             <div className='login-root'>
               <div className='login-mongolia'>
@@ -46,6 +46,7 @@ class Login extends Component{
                     <span className='iconfont iconmima label'></span>
                     <input type='text' placeholder={LOGIN_ROLE[role].placeholder.password} onChange={(e)=>this.setPassword(e)}></input>
                   </div>
+                  {!isLogin?(<div className='error'>{`${msg}`}</div>):null}
                   <div className='login'>
                      <span className='login-text' onClick={this.handleLogin}>LOGIN IN</span>
                   </div>

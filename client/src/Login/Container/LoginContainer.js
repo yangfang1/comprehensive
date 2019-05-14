@@ -12,25 +12,36 @@ class LoginContainer extends Component{
         }
     }
     handleLogin=(name,password)=>{
-        this.props.login(name,password)
+        const {role}=this.state;
+        this.props.login(name,password,role).then((res)=>{
+            if(res.isLogin){
+                sessionStorage.setItem("isLogin",this.props.isLogin);
+                this.props.history.push('/');
+            }else{
+                sessionStorage.setItem({
+                    isLogin:null
+                })
+            }
+        })
     }
     render(){
         const {role}=this.state;
-        console.log(role)
+        const {isLogin,msg}=this.props;
         return(
             <div>
-                <Login role={role} onLogin={this.handleLogin}/>
+                <Login role={role} onLogin={this.handleLogin} isLogin={isLogin} msg={msg}/>
             </div>
         )
     }
 }
 const mapStateToProps = state => ({
-    
+    isLogin:state.Login.isLogin,
+    msg:state.Login.msg
   });
 const mapDispatchToProps = dispatch => ({
     login:bindActionCreators(login,dispatch)
   });
   export default connect(
     mapStateToProps,
-      mapDispatchToProps
+    mapDispatchToProps
 )(LoginContainer);

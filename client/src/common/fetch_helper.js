@@ -21,8 +21,6 @@
             body
         }).then((res) => {
             if (res.status >= 200 && res.status < 300) {
-                console.log(typeof res)
-                console.log('返回数据res',res)
                 return res.json();
             } else {
                 return Promise.reject('请求失败！');

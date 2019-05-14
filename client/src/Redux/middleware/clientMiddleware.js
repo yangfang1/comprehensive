@@ -33,6 +33,7 @@ export const errData = {
       promise
         .then(json => {
           if (json.errorNum === 0) {
+            
             next({ ...rest, result: json, type: SUCCESS });
           } else {
             next({ ...rest, error: json, type: FAILURE });
