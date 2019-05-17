@@ -6,13 +6,12 @@ class LoginController extends Controller {
   async findList() {
     const { ctx } = this;
     ctx.set('Content-Type', 'application/json');
-    const data = await ctx.service.test.findList();
+    const data = await ctx.service.user.findList();
     const user = ctx.request.body;
     const userId = ctx.session.userId;
     const databaseUser = data.filter(item => {
       return item.get('role') === user.role && item.get('id_number') === user.name;
     });
-    console.log(databaseUser);
     if (userId) {
       this.ctx.body = {
         errorNum: 0,
@@ -26,11 +25,9 @@ class LoginController extends Controller {
         msg: '该用户不存在,请重新输入账号密码',
       };
     } else {
-      console.log(databaseUser);
-      console.log(databaseUser[0].password);
       if (databaseUser[0].password === user.password) {
-        console.log(databaseUser[0]._id);
         this.ctx.session.userId = databaseUser[0]._id;
+        this.ctx.session.id_number = databaseUser[0].get('id_number');
         this.ctx.body = {
           errorNum: 0,
           isLogin: true,

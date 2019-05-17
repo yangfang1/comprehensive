@@ -35,7 +35,6 @@ class Header extends Component{
     render(){
         const {isShow}=this.state;
         const {info}=this.props;
-        console.log(info)
         return(
             <div className='header-root'>
               <div className='header-container'>

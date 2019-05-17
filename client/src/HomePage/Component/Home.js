@@ -16,7 +16,10 @@ class App extends Component {
       const {isFunction}=this.state;
       if(isFunction===index){
         return(
-          <li key={index} className='function-special' onMouseLeave={this.unChose}>
+          <li key={index} className='function-special' 
+          onMouseLeave={this.unChose} 
+          onClick={()=>this.handleGopage(item.url)}
+          >
             <div className='red-box'>
               <i className={`iconfont ${item.icon}`}></i>
             </div>
@@ -52,6 +55,9 @@ class App extends Component {
       </div>
     ))
   }
+  handleGopage=path=>{
+    this.props.onGetLogin(path);
+  }
   choseFunction=index=>{
     this.setState({
       isFunction:index
@@ -68,11 +74,8 @@ class App extends Component {
   render() {
     const isLogin=sessionStorage.getItem("isLogin");
     let info=sessionStorage.getItem("info");
-    console.log(isLogin,info)
     if(!(info==='null')){
-      console.log('改变')
       info=JSON.parse(info);
-      console.log(info)
     }else{
       info={
         userName:"",

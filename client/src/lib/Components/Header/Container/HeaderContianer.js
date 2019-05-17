@@ -13,7 +13,6 @@ class HeaderContainer extends Component{
         })
     }
     render(){
-        console.log(sessionStorage.getItem("info"));
         let info=sessionStorage.getItem("info")
         if(info==='null'){
             info={

@@ -3,14 +3,16 @@ import { BrowserRouter as Router, Route,withRouter } from "react-router-dom";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import '../lib/iconfonts/iconfont.scss';
-import Home from '../HomePage/Component/Home';
+import HomeContianer from '../HomePage/Container/HomeContainer';
 import LoginContainer from '../Login/Container/LoginContainer';
+import SettingContainer from '../Setting/Container/SettingContainer';
 import {getUserInfo} from '../Redux/modules/GetLogin';
 class BasicExample extends Component {
   componentDidMount(){
     this.props.getUserInfo().then(()=>{
       const {pathname}=window.location;
       const {isLogin}=this.props;
+      console.log('路由')
       if(pathname!=='/'&&!isLogin){
         this.props.history.push('/login/student');
       }
@@ -20,9 +22,9 @@ class BasicExample extends Component {
     return (
       <Router>
         <div>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={HomeContianer} />
           <Route path="/login/:role" component={LoginContainer} />
-          {/* <Route path="/topics" component={Topics} /> */}
+          <Route path="/setting" component={SettingContainer} />
         </div>
       </Router>
     );

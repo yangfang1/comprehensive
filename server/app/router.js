@@ -9,4 +9,5 @@ module.exports = app => {
   router.get('/api/user/info', controller.user.getUserLogin);
   router.post('/api/login', controller.login.findList);
   router.get('/api/loginout', controller.login.loginout);
+  router.get('/api/setting', controller.setting.findStudentInfo);
 };
