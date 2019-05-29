@@ -6,6 +6,7 @@ import '../lib/iconfonts/iconfont.scss';
 import HomeContianer from '../HomePage/Container/HomeContainer';
 import LoginContainer from '../Login/Container/LoginContainer';
 import SettingContainer from '../Setting/Container/SettingContainer';
+import RankContainer from '../Rank/Container/RankContainer';
 import {getUserInfo} from '../Redux/modules/GetLogin';
 class BasicExample extends Component {
   componentDidMount(){
@@ -25,6 +26,7 @@ class BasicExample extends Component {
           <Route exact path="/" component={HomeContianer} />
           <Route path="/login/:role" component={LoginContainer} />
           <Route path="/setting" component={SettingContainer} />
+          <Route path="/rank" component={RankContainer} />
         </div>
       </Router>
     );

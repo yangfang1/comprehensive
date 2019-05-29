@@ -30,7 +30,7 @@ export const STUDENT_FUNCTION_lIST=[
         title:"综合排名",
         description:"系统数据库中所有学生综合排名，并通过各种条件进行筛选",
         icon:'iconpaiming',
-        url:''
+        url:'/rank'
     },
     {
         title:"个人分析结果",
@@ -151,3 +151,13 @@ export const LOGIN_ROLE={
         }
     }
 }
+export const CHOSE_YEAR=[
+    {key:"第一年度第一学期",value:1},
+    {key:"第一年度第二学期",value:2},
+    {key:"第二年度第一学期",value:3},
+    {key:"第二年度第二学期",value:4},
+    {key:"第三年度第一学期",value:5},
+    {key:"第三年度第二学期",value:6},
+    {key:"第四年度第一学期",value:7},
+    {key:"第四年度第二学期",value:8}
+]

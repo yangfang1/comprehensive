@@ -1,96 +1,4 @@
 {
-    "year":"3",
-    "info":{
-        "name" : "杨芳",
-        "id_number" : "2015117407",
-        "class" : "软工1512班",
-        "isShow" : true,
-        "contact" : "1223010592",
-        "avator" : "https://tvax2.sinaimg.cn/crop.0.0.996.996.180/006kkujRly8ft640trr8vj30ro0romyc.jpg"
-    }
-}
-{
-    "year":"3",
-    "id":"2015117407",
-    "grade":[
-        {
-        "name":"星海求知——天文学的奥秘",
-        "nature":"0",
-        "mark":87.45,
-        "credit":1
-       },
-       {
-        "name":"人人爱设计",
-        "nature":"0",
-        "mark":90.79,
-        "credit":1
-       },
-       {
-        "name":"中国近代史纲要",
-        "nature":"1",
-        "mark":88,
-        "credit":2
-       },
-       {
-        "name":"大学体育3",
-        "nature":"1",
-        "mark":89,
-        "credit":1
-       },
-       {
-        "name":"大学英语3",
-        "nature":"1",
-        "mark":71,
-        "credit":3
-       },
-       
-       {
-        "name":"概率论与数理统计A",
-        "nature":"2",
-        "mark":77,
-        "credit":3
-       },
-       {
-        "name":"文献检索",
-        "nature":"2",
-        "mark":86,
-        "credit":2
-       },
-       {
-        "name":"离散数学",
-        "nature":"2",
-        "mark":80,
-        "credit":4
-       },
-       {
-        "name":"数据结构",
-        "nature":"3",
-        "mark":79,
-        "credit":4
-       },
-       {
-        "name":"数字逻辑",
-        "nature":"2",
-        "mark":86,
-        "credit":3
-       },
-       {
-        "name":"大学物理B2",
-        "nature":"2",
-        "mark":87,
-        "credit":3
-       },
-       {
-        "name":"大学物理实验（二）",
-        "nature":"2",
-        "mark":85,
-        "credit":1.5
-       },
-
-    ]
-}
-db.courses.update({}, {$set: {clock:56})
-{
     "sort":"1",
     "base":[
         {
@@ -100,19 +8,35 @@ db.courses.update({}, {$set: {clock:56})
     "data":[
         {
             "level":"1",
-            "mark":3,
+            "grade":{
+                "first":3,
+                "second":2,
+                "third":1
+            }
         },
         {
             "level":"2",
-            "mark":5,
+            "grade":{
+                "first":5,
+                "second":4,
+                "third":3
+            }
         },
         {
             "level":"3",
-            "mark":8,
+            "grade":{
+                "first":8,
+                "second":7,
+                "third":6
+            }
         },
         {
             "level":"4",
-            "mark":12,
-        },
+            "grade":{
+                "first":10,
+                "second":9,
+                "third":8
+            }
+        }
     ]
 }

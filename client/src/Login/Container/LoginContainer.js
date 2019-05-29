@@ -15,12 +15,17 @@ class LoginContainer extends Component{
     handleLogin=(name,password)=>{
         const {role}=this.state;
         this.props.login(name,password,role).then((res)=>{
-            if(res.isLogin){
-                const {info}=this.props;
-                const infoSession=JSON.stringify(info);
-                sessionStorage.setItem("isLogin",this.props.isLogin);
-                sessionStorage.setItem("info",infoSession);
-                this.props.history.push('/');
+            if(res){
+                if(res.isLogin){
+                    const {info}=this.props;
+                    const infoSession=JSON.stringify(info);
+                    sessionStorage.setItem("isLogin",this.props.isLogin);
+                    sessionStorage.setItem("info",infoSession);
+                    this.props.history.push('/');
+                }else{
+                    sessionStorage.setItem("isLogin",null);
+                    sessionStorage.setItem("info",null);
+                }
             }else{
                 sessionStorage.setItem("isLogin",null);
                 sessionStorage.setItem("info",null);

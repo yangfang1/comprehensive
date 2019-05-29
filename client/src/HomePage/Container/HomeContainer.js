@@ -10,6 +10,8 @@ class HomeContainer extends Component{
             if(res){
                 if(res.data.isLogin){
                     this.props.history.push(path)
+                }else{
+                    this.props.history.push('/login/student')
                 }
             }else{
                 this.props.history.push('/login/student')
