@@ -8,6 +8,14 @@ class Select extends Component{
             defaultKey:this.props.list[0].key
         }
     }
+    generateList=()=>{
+        const {list}=this.props;
+        return list.map((item,index)=>{
+            return (
+                <li key={index}>{item.key}</li>
+            )
+        })
+    }
     handleChose=()=>{
         this.setState({
             isChose:true
@@ -22,9 +30,16 @@ class Select extends Component{
         const {isChose,defaultKey}=this.state;
         return(
             <div className='select-root' onMouseEnter={this.handleChose} onMouseLeave={this.handLeave}>
-                <p>{defaultKey}</p>
-                <span className={`select-icon iconfont ${isChose?'iconxiangshang':'iconxiangxia'}`}></span>
-                <div className='board'></div>
+                <p>{defaultKey}               
+                    <span className={`select-icon iconfont ${isChose?'iconxiangshang':'iconxiangxia'}`}></span>
+                </p>
+                {isChose?(
+                    <div className='board'>
+                    <ul className='list'>
+                        {this.generateList()}
+                    </ul>
+                    </div>
+                ):null}
             </div>
         )
     }

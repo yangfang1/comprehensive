@@ -8,6 +8,8 @@ import LoginContainer from '../Login/Container/LoginContainer';
 import SettingContainer from '../Setting/Container/SettingContainer';
 import RankContainer from '../Rank/Container/RankContainer';
 import {getUserInfo} from '../Redux/modules/GetLogin';
+import Detail from '../Detail/Container/DetailContainer';
+import AnalyseContainer from '../analyse/Container/AnalyseContainer';
 class BasicExample extends Component {
   componentDidMount(){
     this.props.getUserInfo().then(()=>{
@@ -27,6 +29,8 @@ class BasicExample extends Component {
           <Route path="/login/:role" component={LoginContainer} />
           <Route path="/setting" component={SettingContainer} />
           <Route path="/rank" component={RankContainer} />
+          <Route path="/detail" component={Detail} />
+          <Route path="/analyse" component={AnalyseContainer} />
         </div>
       </Router>
     );

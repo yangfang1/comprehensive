@@ -3,8 +3,20 @@ import './setting.scss';
 import HeaderContainer from '../lib/Components/Header/Container/HeaderContianer';
 import Footer from '../lib/Components/Footer/Footer'
 class Setting extends Component{
+  constructor(props){
+    super(props);
+    this.state={
+      isopen:false
+    }
+  }
+  change=()=>{
+    this.setState({
+      isopen:!this.state.isopen
+    })
+  }
     render(){
       const {info}=this.props
+      const {isopen}=this.state;
       console.log('name',info.name)
         return(
             <div className='setting-root'>
@@ -18,6 +30,11 @@ class Setting extends Component{
                     </div>
                     <div className='name'>
                      <p>{info.name}</p>
+                     &nbsp;&nbsp;&nbsp;&nbsp;
+                     {!isopen?"未屏蔽自己的排名：":"已屏蔽自己的排名："}
+                     <div className='open' onClick={this.change}>
+                       <div className={`${!isopen?"left":'right'}`}></div>
+                     </div>
                     </div>
                     <div className='items'>
                       <div className='item'>

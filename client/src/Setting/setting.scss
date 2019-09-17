@@ -55,6 +55,30 @@ body{
                 justify-content: center;
                 align-items: center;
                 color:black;
+                .open{
+                    width: 70px;
+                    height: 25px;
+                    border:1px solid gainsboro;
+                    border-radius: 4px;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                    .left{
+                        width: 50%;
+                        height: 100%;
+                        border-radius: 4px 0 0 4px;
+                        background: red;
+                        float: left;
+                    }
+                    .right{
+                        width: 50%;
+                        height: 100%;
+                        border-radius: 0 4px 4px 0;
+                        background: red;
+                        margin-left: -1px;
+                        float: right;
+                    }
+                }
             }
             .items{
                 width: 800px;

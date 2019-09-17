@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import '../Header.scss';
+import { withRouter } from 'react-router-dom';
 import {STUDENT_FUNCTION_lIST} from '../../../../common/const';
 class Header extends Component{
     constructor(props){
@@ -32,13 +33,16 @@ class Header extends Component{
     handleLoginOut=()=>{
         this.props.onLoginOut()
     }
+    handleGoPage=(path)=>{
+      this.props.history.push(path)
+    }
     render(){
         const {isShow}=this.state;
         const {info}=this.props;
         return(
             <div className='header-root'>
               <div className='header-container'>
-                <div className='logo-text'>
+                <div className='logo-text' onClick={()=>this.handleGoPage("/")}>
                   <p className='title'>高校学生综合素质分析系统</p>
                   <p className='description'>Comprehensive Quality Analysis System</p>
                 </div>
@@ -67,4 +71,4 @@ class Header extends Component{
         )
     }
 }
-export default Header;
+export default withRouter(Header);
